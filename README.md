@@ -46,4 +46,3 @@ ___
 ## Roadmap:
 
 * Replace Babel with [SWC](https://swc.rs/)
-* Replace Webpack with [Turbopack](https://turbo.build/)
