@@ -13,10 +13,7 @@
     "JavaScript",
     "boilerplate"
   ],
-  "author": {
-    "name": "Jared Rethman",
-    "email": "jaredrethman@gmail.com"
-  },
+  "author": "Jared Rethman <jaredrethman@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -34,15 +31,21 @@
     "start-prod": "yarn build && node express.js",
     "test": "jest --coverage --watchAll --config=configs/jest.ts"
   },
+  "bin": {
+    "ecko-webpack": "./bin/ecko-webpack.js"
+  },
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.18.6",
     "@types/jest": "^29.2.2",
+    "@types/node": "^18.11.9",
     "@types/webpack-env": "^1.18.0",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
     "babel-loader": "^9.1.0",
+    "chalk": "^4.1.2",
+    "cross-spawn": "^7.0.3",
     "css-loader": "^6.7.1",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
@@ -57,6 +60,7 @@
     "postcss": "^8.4.19",
     "postcss-loader": "^7.0.1",
     "prettier": "^2.7.1",
+    "resolve-bin": "^1.0.1",
     "rimraf": "^3.0.2",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
@@ -68,5 +72,6 @@
     "webpack-dev-server": "^4.11.1",
     "webpack-merge": "^5.8.0"
   },
+  "main": "./src/index.ts",
   "dependencies": {}
 }

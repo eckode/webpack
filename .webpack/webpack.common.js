@@ -1,20 +1,34 @@
 // shared config (dev and prod)
-const { resolve } = require("path");
+const { resolve, normalize } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = {
-  entry: "./index.ts",
+const {ECKO_PATH, ECKO_PROJECT_PATH} = process.env;
+
+const common = {
+  entry: normalize(`${ECKO_PROJECT_PATH}/src/index.ts`),
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
-  context: resolve(__dirname, "../../src"),
+  context: ECKO_PATH,
   module: {
     rules: [
       {
-        test: [/\.jsx?$/, /\.tsx?$/],
-        use: ["babel-loader"],
-        include: /src/,
+        test: /\.(j|t)sx?$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+              babelrc: false,
+              configFile: false,
+              presets: [
+                require.resolve( "@babel/preset-env" ),
+                require.resolve( "@babel/preset-typescript" ),
+              ],
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
@@ -39,12 +53,14 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: "index.html.ejs" }),
+    new HtmlWebpackPlugin({ template: "./src/index.html.ejs" }),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: "style.css",
       chunkFilename: "[name].css",
     }),
   ],
+};
+
+module.exports = {
+  common
 };

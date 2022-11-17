@@ -1,5 +1,7 @@
 # Eckode / Webpack
 
+> ⚠️ This package is still a working in progress and is not yet suitable for usage.
+
 *Not, just another boilerplate.*
 
 An unopinionated; module bundling and preprocessing boilerplate to rapidly streamline frontend development.
@@ -45,4 +47,5 @@ ___
 
 ## Roadmap:
 
+* CLI functionality to allow usage of this code base as an npm package.
 * Replace Babel with [SWC](https://swc.rs/)
