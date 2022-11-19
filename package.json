@@ -24,52 +24,55 @@
   },
   "homepage": "https://github.com/eckode/webpack",
   "scripts": {
-    "build": "yarn clean-dist && webpack --config=configs/webpack/prod.js",
+    "start": "webpack serve --config=.webpack/webpack.dev.mjs",
+    "build": "yarn clean-dist && webpack --config=.webpack/webpack.prod.mjs",
+    "package": "yarn build && node bin/package.mjs",
     "clean-dist": "rimraf dist/*",
-    "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet",
-    "start": "webpack serve --config=configs/webpack/dev.js",
-    "start-prod": "yarn build && node express.js",
-    "test": "jest --coverage --watchAll --config=configs/jest.ts"
+    "start:prod": "yarn build && node express.js",
+    "test:lint": "eslint './src/**/*.{js,ts,tsx}' --quiet",
+    "test:jest": "jest --coverage --watchAll --config=jest.ts"
   },
   "bin": {
-    "ecko-webpack": "./bin/ecko-webpack.js"
+    "ecko-webpack": "./bin/ecko-webpack.mjs"
   },
   "engines": {
-		"node": ">=16",
-		"npm": ">=8"
-	},
-	"files": [
-		".webpack",
-		"bin",
-		"configs",
-		"src"
-	],
+    "node": ">=16",
+    "npm": ">=8"
+  },
+  "files": [
+    ".webpack",
+    "bin",
+    "configs",
+    "src"
+  ],
   "publishConfig": {
-		"access": "public"
-	},
-  "dependencies": {
+    "access": "public"
+  },
+  "devDependencies": {
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.18.6",
-    "@types/jest": "^29.2.2",
+    "@types/jest": "^29.2.3",
     "@types/node": "^18.11.9",
     "@types/webpack-env": "^1.18.0",
-    "@typescript-eslint/eslint-plugin": "^5.42.1",
-    "@typescript-eslint/parser": "^5.42.1",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
     "babel-loader": "^9.1.0",
-    "chalk": "^4.1.2",
-    "cross-spawn": "^7.0.3",
-    "css-loader": "^6.7.1",
+    "chalk": "^5.1.2",
+    "css-loader": "^6.7.2",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-promise": "^6.1.1",
     "express": "^4.18.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
-    "mini-css-extract-plugin": "^2.6.1",
+    "mini-css-extract-plugin": "^2.7.0",
     "postcss": "^8.4.19",
     "postcss-loader": "^7.0.1",
     "prettier": "^2.7.1",
@@ -78,13 +81,12 @@
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "ts-node": "^10.9.1",
-    "typescript": "^4.8.4",
-    "web-vitals": "^3.0.4",
+    "typescript": "^4.9.3",
     "webpack": "^5.75.0",
-    "webpack-cli": "^4.10.0",
+    "webpack-cli": "^5.0.0",
     "webpack-dev-server": "^4.11.1",
     "webpack-merge": "^5.8.0"
   },
   "main": "./src/index.ts",
-  "devDependencies": {}
+  "dependencies": {}
 }

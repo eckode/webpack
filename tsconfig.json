@@ -1,21 +1,13 @@
 {
-  "extends": "ts-node/node16/tsconfig.json",
   "ts-node": {
-    "transpileOnly": true,
-
-    "files": true,
-
+    "esm": true,
     "compilerOptions": {
+      "module": "commonjs"
     }
   },
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
+    "module": "NodeNext",
+    "target": "ESNext",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -23,18 +15,8 @@
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "types": ["webpack-env", "jest", "node"],
-    "ts-node": {
-      "esm": true
-    }
+    "types": ["webpack-env", "jest", "node", "webpack-dev-server"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
