@@ -1,19 +1,31 @@
 module.exports = {
-  extends: [
-    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
-    "plugin:prettier/recommended", // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors.
-  ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    sourceType: "module",
     ecmaVersion: 2022,
+    sourceType: 'module',
     ecmaFeatures: {
-      jsx: true, // Allows for the parsing of JSX
+      jsx: true,
     },
   },
-  plugins: ["@typescript-eslint"],
-  // Fine tune rules
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+      },
+    },
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
+  ],
+  plugins: ['prettier'],
   rules: {
-    "@typescript-eslint/no-var-requires": 0,
+    semi: 0,
+    'no-console': 'warn',
+    'comma-dangle': ['error', 'never'],
+    'prettier/prettier': ['error'],
   },
 };
