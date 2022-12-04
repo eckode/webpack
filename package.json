@@ -24,10 +24,9 @@
   },
   "homepage": "https://github.com/eckode/webpack",
   "scripts": {
-    "start": "webpack serve --config=.webpack/webpack.dev.mjs",
-    "build": "yarn clean-dist && webpack --config=.webpack/webpack.prod.mjs",
-    "package": "yarn build && node bin/package.mjs",
-    "clean-dist": "rimraf dist/*",
+    "webpack": "tsc --build tsconfig-webpack.json",
+    "dev": "webpack serve --mode=development --config=webpack/webpack.dev.mjs",
+    "build": "webpack --config=webpack/webpack.prod.mjs",
     "start:prod": "yarn build && node express.js",
     "test:lint": "eslint './src/**/*.{js,ts,tsx}' --quiet",
     "test:jest": "jest --coverage --watchAll --config=jest.ts"
