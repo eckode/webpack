@@ -8,6 +8,15 @@ An unopinionated; module bundling and preprocessing boilerplate to rapidly strea
 
 ___
 
+## About:
+
+This code base can be used in 3 ways:
+
+* Fork it
+* Clone it
+* Depend on it
+___
+
 ## Features:
 * Webpack (v5):
    * Webpack-Dev-Server with HMR
@@ -28,6 +37,18 @@ ___
 
 ### Use it:
 
+By far the easiest way to use this code is via NPM.
+
+`yarn add -D @eckode/webpack` then add the following script commands to your `package.json`.
+
+```json
+"scripts": {
+   "dev": "eckode", // Development
+   "build": "eckode" // Production
+},
+```
+Alternatively, clone and/or fork it, then run:
+
 | Yarn        | NPM         |
 | ----------- | ----------- |
 | **Install** ||
@@ -47,5 +68,5 @@ ___
 
 ## Roadmap:
 
-* CLI functionality to allow usage of this code base as an npm package.
-* Replace Babel with [SWC](https://swc.rs/)
+- [x] CLI functionality to allow usage of this code base as an npm package.
+- [] Replace Babel with [SWC](https://swc.rs/)
