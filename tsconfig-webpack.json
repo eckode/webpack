@@ -1,5 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "compilerOptions": {
     "lib": ["es2021"],
     "module": "ES2022",
@@ -8,8 +13,7 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "outDir": "./dist/"
+    "moduleResolution": "node"
   },
-  "include": ["src/*"]
+  "include": ["webpack/*.mts"]
 }
