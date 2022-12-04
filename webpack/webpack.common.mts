@@ -1,28 +1,21 @@
-// shared config (dev and prod)
 import { normalize } from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { getNodeRequire } from '../cli/node-local-variables.mjs';
+import { getNodeRequire } from '@eckode/cli/src/node-env-vars.mjs';
+import { EckodeWebpackConfig } from './types';
 
-const { ECKO_PATH, ECKO_PROJECT_PATH = process.cwd() } = process.env;
+const { ECKO_PROJECT_PATH = process.cwd() } = process.env;
 
-/**
- * require.resolve()
- *
- * @param {string} mod Module to resolve
- */
-const nodeRequireResolve = (mod) => getNodeRequire().resolve(mod);
-
-export const commonConfig = {
+export const commonConfig: EckodeWebpackConfig = {
   entry: normalize(`${ECKO_PROJECT_PATH}/src/index.ts`),
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.mts'],
   },
-  context: ECKO_PATH ?? process.cwd(),
+  context: ECKO_PROJECT_PATH ?? process.cwd(),
   module: {
     rules: [
       {
-        test: /\.(j|t)sx?$/,
+        test: /\.(j|t|m)(s|t|j)(s|x)?$/, // .js, .jsx, .ts, .tsx, .mts, .mjs
         exclude: /node_modules/,
         use: [
           {
@@ -30,7 +23,7 @@ export const commonConfig = {
             options: {
               babelrc: false,
               configFile: false,
-              presets: [nodeRequireResolve('@babel/preset-env'), nodeRequireResolve('@babel/preset-typescript')],
+              presets: [getNodeRequire().resolve('@babel/preset-env'), getNodeRequire().resolve('@babel/preset-typescript')],
             },
           },
         ],

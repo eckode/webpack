@@ -1,13 +1,12 @@
 // production config
-const { merge } = require("webpack-merge");
-const { normalize } = require("path");
+import { normalize } from "path";
 
-const {common} = require("./webpack.common");
+import { commonConfig } from "./webpack.common.mjs";
+import { EckodeWebpackConfig } from "./types";
 const { env: {ECKO_PROJECT_PATH = process.cwd()} } = process;
 
-console.log("Using webpack.prod");
-
-module.exports = merge(common, {
+export const configProd: EckodeWebpackConfig = {
+  ...commonConfig,
   mode: "production",
   output: {
     filename: "js/bundle.[contenthash].min.js",
@@ -15,4 +14,6 @@ module.exports = merge(common, {
     publicPath: "/",
   },
   devtool: "source-map",
-});
+};
+
+export default configProd;
