@@ -1,6 +1,6 @@
 {
   "name": "@eckode/webpack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JavaScript with TypeScript. CSS with SCSS. Built with Webpack. Serving with Webpack-Dev-Server and HMR.",
   "keywords": [
     "webpack",
@@ -36,10 +36,11 @@
     "npm": ">=8"
   },
   "files": [
-    ".webpack",
-    "bin",
-    "configs",
-    "src"
+    "webpack",
+    "package.json",
+    ".eslintrc.js",
+    "prettier.js",
+    "tsconfig.json"
   ],
   "publishConfig": {
     "access": "public"
