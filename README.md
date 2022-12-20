@@ -71,4 +71,4 @@ ___
 ## Roadmap:
 
 - [x] CLI functionality to allow usage of this code base as an npm package.
-- [] Replace Babel with [SWC](https://swc.rs/)
+- [ ] Replace Babel with [SWC](https://swc.rs/)
