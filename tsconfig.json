@@ -1,15 +1,16 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "lib": ["es2021"],
-    "module": "ES2022",
-    "target": "ES2022",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "lib": ["es2021"],
+    "module": "ES2020",
     "moduleResolution": "node",
-    "outDir": "./dist/"
+    "outDir": "./dist/",
+    "target": "ES2021",
+    "types": ["webpack-env", "node"],
+    "skipLibCheck": true
   },
   "include": ["src/*"]
 }

@@ -27,7 +27,7 @@
     "webpack": "tsc --build tsconfig-webpack.json",
     "dev": "webpack serve --mode=development --config=webpack/webpack.dev.mjs",
     "build": "webpack --config=webpack/webpack.prod.mjs",
-    "start:prod": "yarn build && node express.js",
+    "express": "eckode",
     "test:lint": "eslint './src/**/*.{js,ts,tsx}' --quiet",
     "test:jest": "jest --coverage --watchAll --config=jest.ts"
   },
@@ -49,7 +49,7 @@
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.18.6",
-    "@eckode/cli": "^0.0.2",
+    "@eckode/cli": "^0.0.4",
     "@types/jest": "^29.2.3",
     "@types/node": "^18.11.9",
     "@types/webpack-env": "^1.18.0",
