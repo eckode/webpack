@@ -1,3 +1,5 @@
+![build workflow](https://github.com/eckode/webpack/actions/workflows/build.yml/badge.svg)
+
 # Eckode / Webpack
 
 > ⚠️ This package is still a working in progress and is not yet suitable for usage.
