@@ -1,17 +1,12 @@
 // Imports
-import { binarySearch } from "./binarxy-search";
+import { binarySearch } from './binary-search';
 // Load scss
-import "./scss/index.scss";
+import './scss/index.scss';
 
 (() => {
+  // eslint-disable-next-line no-console
   console.log(
-    binarySearch(
-      [
-        2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 31, 33,
-        35, 55, 56, 57, 59,
-      ],
-      13,
-    ),
+    binarySearch([2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 31, 33, 35, 55, 56, 57, 59], 13)
   );
 })();
 
