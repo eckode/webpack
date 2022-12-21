@@ -1,9 +1,7 @@
 // Imports
-import { binarySearch } from "./binary-search";
+import { binarySearch } from "./binarxy-search";
 // Load scss
 import "./scss/index.scss";
-
-callNoneExsiting()
 
 (() => {
   console.log(
