@@ -3,6 +3,8 @@ import { binarySearch } from "./binary-search";
 // Load scss
 import "./scss/index.scss";
 
+callNoneExsiting()
+
 (() => {
   console.log(
     binarySearch(
