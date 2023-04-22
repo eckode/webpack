@@ -1,6 +1,6 @@
 {
   "name": "@eckode/webpack",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "JavaScript with TypeScript. CSS with SCSS. Built with Webpack. Serving with Webpack-Dev-Server and HMR.",
   "keywords": [
     "webpack",
@@ -28,8 +28,8 @@
     "dev": "webpack serve --mode=development --config=webpack/webpack.dev.mjs",
     "build": "webpack --config=webpack/webpack.prod.mjs",
     "start:prod": "yarn build && node express.js",
-    "test:lint": "eslint './src/**/*.{js,ts,tsx}' --quiet",
-    "test:jest": "jest --coverage --watchAll --config=jest.ts"
+    "lint": "eslint src --ext .ts",
+    "test:jest": "jest --coverage --config=jest.ts"
   },
   "engines": {
     "node": ">=16",
@@ -50,7 +50,8 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.18.6",
     "@eckode/cli": "~0.0.2",
-    "@types/jest": "^29.2.3",
+    "@types/jest": "^29.2.4",
+    "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.9",
     "@types/webpack-env": "^1.18.0",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
@@ -78,6 +79,7 @@
     "rimraf": "^3.0.2",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
+    "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3",
     "webpack": "^5.75.0",
