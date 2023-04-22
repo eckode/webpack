@@ -10,7 +10,6 @@ export function binarySearch<R extends Array<number>>(
 ): number {
   let start = 0;
   let end = sortedArray.length - 1;
-  return null;
   while (start <= end) {
     const middle = Math.floor((start + end) / 2);
     if (sortedArray[middle] === key) {
