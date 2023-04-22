@@ -29,7 +29,7 @@
     "build": "webpack --config=webpack/webpack.prod.mjs",
     "start:prod": "yarn build && node express.js",
     "lint": "eslint src --ext .ts",
-    "test:jest": "jest --coverage --watchAll --config=jest.ts"
+    "test:jest": "jest --coverage --config=jest.ts"
   },
   "engines": {
     "node": ">=16",
