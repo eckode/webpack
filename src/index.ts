@@ -1,7 +1,7 @@
 // Imports
 import { binarySearch } from './binary-search';
 // Load scss
-import './scss/index.scss';
+import './css/index.css';
 
 (() => {
   // eslint-disable-next-line no-console
