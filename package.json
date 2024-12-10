@@ -1,6 +1,6 @@
 {
   "name": "@eckode/webpack",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "JavaScript with TypeScript. CSS with SCSS. Built with Webpack. Serving with Webpack-Dev-Server and HMR.",
   "keywords": [
     "webpack",
@@ -39,7 +39,7 @@
     "webpack",
     "package.json",
     ".eslintrc.js",
-    "prettier.js",
+    "prettier.config.js",
     "tsconfig.json"
   ],
   "publishConfig": {
@@ -49,7 +49,7 @@
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-typescript": "^7.21.4",
-    "@eckode/cli": "~0.0.5",
+    "@eckode/cli": "^0.0.8",
     "@types/jest": "^29.5.1",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.15.13",

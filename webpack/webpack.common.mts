@@ -23,7 +23,10 @@ export const commonConfig: EckodeWebpackConfig = {
             options: {
               babelrc: false,
               configFile: false,
-              presets: [getNodeRequire().resolve('@babel/preset-env'), getNodeRequire().resolve('@babel/preset-typescript')],
+              presets: [
+                getNodeRequire().resolve('@babel/preset-env'),
+                getNodeRequire().resolve('@babel/preset-typescript'),
+              ],
             },
           },
         ],
@@ -34,7 +37,12 @@ export const commonConfig: EckodeWebpackConfig = {
       },
       {
         test: /\.(scss|sass)$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
