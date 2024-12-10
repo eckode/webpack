@@ -23,7 +23,6 @@ ___
 * Webpack (v5):
    * Webpack-Dev-Server with HMR
 * CSS:
-   * SCSS/SASS
    * PostCSS
 * JavaScript:
    * TypeScript

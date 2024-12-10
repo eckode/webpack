@@ -12,7 +12,7 @@ export const commonConfig = {
     module: {
         rules: [
             {
-                test: /\.(j|t|m)(s|t|j)(s|x)?$/,
+                test: /\.(j|t|m)(s|t|j)(s|x)?$/, // .js, .jsx, .ts, .tsx, .mts, .mjs
                 exclude: /node_modules/,
                 use: [
                     {
